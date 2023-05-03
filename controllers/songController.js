@@ -35,16 +35,28 @@ const getAllSongs = asyncHandler(async (req, res) => {
 // @route   POST /api/song/editSong/:id
 // @access  Public
 const editSong = asyncHandler(async (req, res) => {
-  console.log("edit song");
-  res.send("aedit song");
+  const id = req.params.id;
+  const updated = await Song.findByIdAndUpdate(id, req.body, { new: true });
+  if (updated) {
+    res.status(201).json(updated);
+  } else {
+    res.status(400);
+    throw new Error("no song to update");
+  }
 });
 
 // @desc    delete song
 // @route   POST /api/song/deleteSong/:id
 // @access  Public
 const deleteSong = asyncHandler(async (req, res) => {
-  console.log("delete song");
-  res.send("delete song");
+  const id = req.params.id;
+  const deleted = await Song.findByIdAndRemove(id);
+  if (deleted) {
+    res.status(201).send("song is deleted");
+  } else {
+    res.status(400);
+    throw new Error("no song to delete");
+  }
 });
 
 module.exports = {

@@ -10,7 +10,7 @@ const {
 router
   .post("/addSong", addSong)
   .get("/getAllSongs", getAllSongs)
-  .put("/editSong/:_id", editSong)
-  .delete("/deleteSong/:_id", deleteSong);
+  .put("/editSong/:id", editSong)
+  .delete("/deleteSong/:id", deleteSong);
 
 module.exports = router;
