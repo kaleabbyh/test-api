@@ -9,8 +9,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/api/song", (req, res) => {
-  res.send("welcome");
+app.get("/", (req, res) => {
+  res.send("welcome to song API");
 });
 app.use("/api/song", require("./routes/songRoute"));
 
