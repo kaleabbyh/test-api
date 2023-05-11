@@ -1,0 +1,16 @@
+frontend is deployed on vercel
+backend is deployed on render
+
+frontend: https://addissoftware-test-frontend.vercel.app/
+
+backend: https://addissoftware-test-api.onrender.com/
+
+urls:{
+getsongs:"https://addissoftware-test-api.onrender.com/api/song/getAllSongs",
+
+addsong:"https://addissoftware-test-api.onrender.com/api/song/addSong",
+
+editsong:"https://addissoftware-test-api.onrender.com/api/song/editSong/:id",
+
+deletesong:"https://addissoftware-test-api.onrender.com/api/song/deleteSong/:id"
+}
