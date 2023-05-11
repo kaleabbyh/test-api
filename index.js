@@ -9,6 +9,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/api/song", (req, res) => {
+  res.send("welcome");
+});
 app.use("/api/song", require("./routes/songRoute"));
 
 const PORT = process.env.PORT || 5000;
