@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const connectDB = require("./config/db");
+const connectDB = require("../config/db");
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("welcome to song API");
 });
-app.use("/api/song", require("./routes/songRoute"));
+app.use("/api/song", require("../routes/songRoute"));
 
 const PORT = process.env.PORT || 5000;
 
